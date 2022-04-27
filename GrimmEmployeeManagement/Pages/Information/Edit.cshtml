@@ -1,0 +1,75 @@
+﻿@page
+@model GrimmEmployeeManagement.Pages.Information.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>EmployeeData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EmployeeData.ID" />
+            <div class="form-group">
+                <label asp-for="EmployeeData.SiteName" class="control-label"></label>
+                <input asp-for="EmployeeData.SiteName" class="form-control" />
+                <span asp-validation-for="EmployeeData.SiteName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeData.SiteRegion" class="control-label"></label>
+                <input asp-for="EmployeeData.SiteRegion" class="form-control" />
+                <span asp-validation-for="EmployeeData.SiteRegion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeData.SiteNumber" class="control-label"></label>
+                <input asp-for="EmployeeData.SiteNumber" class="form-control" />
+                <span asp-validation-for="EmployeeData.SiteNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeData.EmployeeName" class="control-label"></label>
+                <input asp-for="EmployeeData.EmployeeName" class="form-control" />
+                <span asp-validation-for="EmployeeData.EmployeeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeData.Birthday" class="control-label"></label>
+                <input asp-for="EmployeeData.Birthday" class="form-control" />
+                <span asp-validation-for="EmployeeData.Birthday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeData.Social" class="control-label"></label>
+                <input asp-for="EmployeeData.Social" class="form-control" />
+                <span asp-validation-for="EmployeeData.Social" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeData.StartingDate" class="control-label"></label>
+                <input asp-for="EmployeeData.StartingDate" class="form-control" />
+                <span asp-validation-for="EmployeeData.StartingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeData.Pay" class="control-label"></label>
+                <input asp-for="EmployeeData.Pay" class="form-control" />
+                <span asp-validation-for="EmployeeData.Pay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeData.Clearence" class="control-label"></label>
+                <input asp-for="EmployeeData.Clearence" class="form-control" />
+                <span asp-validation-for="EmployeeData.Clearence" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

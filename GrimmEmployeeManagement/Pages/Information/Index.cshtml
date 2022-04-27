@@ -1,0 +1,84 @@
+﻿@page
+@model GrimmEmployeeManagement.Pages.Information.IndexModel
+
+@{
+    ViewData["Title"] = "Database Index";
+}
+
+<h1>Database Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeData[0].SiteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeData[0].SiteRegion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeData[0].SiteNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeData[0].EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeData[0].Birthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeData[0].Social)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeData[0].StartingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeData[0].Pay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeData[0].Clearence)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.EmployeeData) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiteRegion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SiteNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birthday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Social)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clearence)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
